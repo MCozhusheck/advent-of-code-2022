@@ -1,3 +1,4 @@
+#![feature(iter_array_chunks)]
 use std::error::Error;
 use std::fs::File;
 use std::io::prelude::*;
@@ -30,8 +31,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let day2_part2_result = day2::part2(data);
     // println!("total score: {}", day2_part2_result);
 
-    let day3_part1_result = day3::part1(data);
-    println!("total priority: {}", day3_part1_result);
+    let day3_part2_result = day3::part2(data);
+    println!("total priority: {}", day3_part2_result);
     Ok(())
 }
 
