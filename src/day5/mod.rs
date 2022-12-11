@@ -40,10 +40,7 @@ pub fn part1(input: String) -> String {
 
         let to_crate = init_state[to].clone();
         init_state.remove(to);
-        init_state.insert(
-            to,
-            format!("{}{}", crates.0.chars().rev().collect::<String>(), to_crate),
-        );
+        init_state.insert(to, format!("{}{}", crates.0, to_crate));
     }
 
     init_state
