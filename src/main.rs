@@ -9,11 +9,13 @@ use crate::day1::Expedition;
 use crate::day2::*;
 use crate::day3::*;
 use crate::day4::*;
+use crate::day5::*;
 
 pub mod day1;
 pub mod day2;
 pub mod day3;
 pub mod day4;
+pub mod day5;
 
 fn main() -> Result<(), Box<dyn Error>> {
     // if let Ok(lines) = read_lines("./src/day1/input.txt") {
@@ -23,7 +25,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     //     println!("highest: {}", exp.highest_calories());
     //     println!("highest top 3: {}", exp.highest_3_calories());
     // }
-    let mut file = File::open("./src/day4/input.txt")?;
+    let mut file = File::open("./src/day5/input.txt")?;
     let mut data = String::new();
     file.read_to_string(&mut data)?;
 
@@ -33,8 +35,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let day2_part2_result = day2::part2(data);
     // println!("total score: {}", day2_part2_result);
 
-    let day4_part2_result = day4::part2(data);
-    println!("total priority: {}", day4_part2_result);
+    let day5_part1_result = day5::part1(data);
+    println!("total priority: {}", day5_part1_result);
     Ok(())
 }
 
