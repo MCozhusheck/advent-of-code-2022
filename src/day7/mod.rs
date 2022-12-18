@@ -71,9 +71,7 @@ pub fn part1(input: String) -> u32 {
     let mut total_size = 0;
 
     while let Some(dir) = to_visit.pop() {
-        for d in dir.sub_dir.borrow().values() {
-            to_visit.push(Rc::clone(d));
-        }
+        to_visit.extend(dir.sub_dir.borrow().values().map(Rc::clone));
 
         if dir.get_size() <= 100000 {
             total_size += dir.get_size()
