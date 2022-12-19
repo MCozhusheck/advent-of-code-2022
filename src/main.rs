@@ -12,6 +12,7 @@ use crate::day4::*;
 use crate::day5::*;
 use crate::day6::*;
 use crate::day7::*;
+use crate::day8::*;
 
 pub mod day1;
 pub mod day2;
@@ -20,6 +21,7 @@ pub mod day4;
 pub mod day5;
 pub mod day6;
 pub mod day7;
+pub mod day8;
 fn main() -> Result<(), Box<dyn Error>> {
     // if let Ok(lines) = read_lines("./src/day1/input.txt") {
     //     // Consumes the iterator, returns an (Optional) String
@@ -28,7 +30,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     //     println!("highest: {}", exp.highest_calories());
     //     println!("highest top 3: {}", exp.highest_3_calories());
     // }
-    let mut file = File::open("./src/day7/input.txt")?;
+    let mut file = File::open("./src/day8/input.txt")?;
     let mut data = String::new();
     file.read_to_string(&mut data)?;
 
@@ -38,8 +40,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let day2_part2_result = day2::part2(data);
     // println!("total score: {}", day2_part2_result);
 
-    let day7_part1_result = day7::part1(data);
-    println!("total priority: {}", day7_part1_result);
+    let day8_part1_result = day8::part1(data);
+    println!("total priority: {}", day8_part1_result);
     Ok(())
 }
 
