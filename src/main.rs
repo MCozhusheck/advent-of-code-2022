@@ -35,7 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     //     println!("highest: {}", exp.highest_calories());
     //     println!("highest top 3: {}", exp.highest_3_calories());
     // }
-    let mut file = File::open("./src/day9/input.txt")?;
+    let mut file = File::open("./src/day10/input.txt")?;
     let mut data = String::new();
     file.read_to_string(&mut data)?;
 
@@ -45,8 +45,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let day2_part2_result = day2::part2(data);
     // println!("total score: {}", day2_part2_result);
 
-    let day9_part1_result = day9::part1(data);
-    println!("total priority: {}", day9_part1_result);
+    let day10_part1_result = day10::part1(data);
+    println!("total priority: {}", day10_part1_result);
     Ok(())
 }
 

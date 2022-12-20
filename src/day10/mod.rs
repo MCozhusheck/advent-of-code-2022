@@ -9,7 +9,8 @@ pub fn part1(input: String) -> i32 {
             "noop" => {
                 println!("noop - cycle: {}, register: {}", cycle, register);
                 cycles_strength.iter().for_each(|x| {
-                    if (cycle..(cycle + 1)).contains(x) {
+                    if ((cycle + 1)..=(cycle + 1)).contains(x) {
+                        println!("noop push {:?} {}", cycle..(cycle + 2), x);
                         register_values.push(register)
                     }
                 });
@@ -18,7 +19,8 @@ pub fn part1(input: String) -> i32 {
             "addx" => {
                 println!("addx - cycle: {}, register: {}", cycle, register);
                 cycles_strength.iter().for_each(|x| {
-                    if (cycle..(cycle + 2)).contains(x) {
+                    if ((cycle + 1)..=(cycle + 2)).contains(x) {
+                        println!("addx push {:?} {}", cycle..(cycle + 2), x);
                         register_values.push(register)
                     }
                 });
