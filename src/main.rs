@@ -7,6 +7,7 @@ use std::io::{self, BufRead};
 use std::path::Path;
 
 use crate::day1::Expedition;
+use crate::day10::*;
 use crate::day2::*;
 use crate::day3::*;
 use crate::day4::*;
@@ -17,6 +18,7 @@ use crate::day8::*;
 use crate::day9::*;
 
 pub mod day1;
+pub mod day10;
 pub mod day2;
 pub mod day3;
 pub mod day4;
