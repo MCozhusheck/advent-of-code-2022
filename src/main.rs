@@ -45,8 +45,8 @@ fn main() -> Result<(), Box<dyn Error>> {
     // let day2_part2_result = day2::part2(data);
     // println!("total score: {}", day2_part2_result);
 
-    let day10_part1_result = day10::part1(data);
-    println!("total priority: {}", day10_part1_result);
+    let day10_part2_result = day10::part2(data);
+    // println!("total priority: {}", day10_part2_result);
     Ok(())
 }
 
