@@ -14,64 +14,52 @@ pub fn part1(input: String) -> usize {
     input.split('\n').for_each(|line| {
         let words = line.split(' ').collect::<Vec<&str>>();
         let steps = words[1].parse::<i32>().unwrap();
-        head = match words[0] {
+        match words[0] {
             "U" => {
-                let next_head = (head.0, head.1 + steps);
-                println!(
-                    "head: {:?} next_head: {:?}, tail: {:?}",
-                    head, next_head, tail
-                );
-                tail = match distance(next_head, tail) {
-                    (0..=1, 0..=1) => tail,
-                    _ => (next_head.0, next_head.1 - 1),
-                };
-
-                println!("tail: {:?}", tail);
-                next_head
+                for step in 0..steps {
+                    let next_head = (head.0, head.1 + 1);
+                    tail = match distance(next_head, tail) {
+                        (0..=1, 0..=1) => tail,
+                        _ => (next_head.0, next_head.1 - 1),
+                    };
+                    head = next_head;
+                    visited_points.insert(tail);
+                }
             }
             "R" => {
-                let next_head = (head.0 + steps, head.1);
-                println!(
-                    "head: {:?} next_head: {:?}, tail: {:?}",
-                    head, next_head, tail
-                );
-                tail = match distance(next_head, tail) {
-                    (0..=1, 0..=1) => tail,
-                    _ => (next_head.0 - 1, next_head.1),
-                };
-                println!("tail: {:?}", tail);
-
-                next_head
+                for step in 0..steps {
+                    let next_head = (head.0 + 1, head.1);
+                    tail = match distance(next_head, tail) {
+                        (0..=1, 0..=1) => tail,
+                        _ => (next_head.0 - 1, next_head.1),
+                    };
+                    head = next_head;
+                    visited_points.insert(tail);
+                }
             }
             "D" => {
-                let next_head = (head.0, head.1 - steps);
-                println!(
-                    "head: {:?} next_head: {:?}, tail: {:?}",
-                    head, next_head, tail
-                );
-                tail = match distance(next_head, tail) {
-                    (0..=1, 0..=1) => tail,
-                    _ => (next_head.0, next_head.1 + 1),
-                };
-                println!("tail: {:?}", tail);
-
-                next_head
+                for step in 0..steps {
+                    let next_head = (head.0, head.1 - 1);
+                    tail = match distance(next_head, tail) {
+                        (0..=1, 0..=1) => tail,
+                        _ => (next_head.0, next_head.1 + 1),
+                    };
+                    head = next_head;
+                    visited_points.insert(tail);
+                }
             }
             "L" => {
-                let next_head = (head.0 - steps, head.1);
-                println!(
-                    "head: {:?} next_head: {:?}, tail: {:?}",
-                    head, next_head, tail
-                );
-                tail = match distance(next_head, tail) {
-                    (0..=1, 0..=1) => tail,
-                    _ => (next_head.0 + 1, next_head.1),
-                };
-                println!("tail: {:?}", tail);
-
-                next_head
+                for step in 0..steps {
+                    let next_head = (head.0 - 1, head.1);
+                    tail = match distance(next_head, tail) {
+                        (0..=1, 0..=1) => tail,
+                        _ => (next_head.0 + 1, next_head.1),
+                    };
+                    head = next_head;
+                    visited_points.insert(tail);
+                }
             }
-            _ => head,
+            _ => panic!("err"),
         };
         visited_points.insert(tail);
     });
