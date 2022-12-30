@@ -1,11 +1,7 @@
-use std::{cell::RefCell, collections::HashSet};
+use std::collections::HashSet;
 
 fn distance(left: (i32, i32), right: (i32, i32)) -> (u32, u32) {
     return (left.0.abs_diff(right.0), left.1.abs_diff(right.1));
-}
-
-fn delta(left: (i32, i32), right: (i32, i32)) -> (i32, i32) {
-    return (left.0 - (right.0), left.1 - (right.1));
 }
 
 pub fn part1(input: String) -> usize {
